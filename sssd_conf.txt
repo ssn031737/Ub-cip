@@ -1,0 +1,23 @@
+[sssd]
+services = nss, pam
+domains = delhivery.com
+[domain/delhivery.com]
+ignore_group_members = true
+sudo_provider = none
+cache_credentials = true
+ldap_tls_cert = /var/Google_2026_05_22_46666.crt
+ldap_tls_key = /var/Google_2026_05_22_46666.key
+ldap_uri = ldaps://ldap.google.com:636
+ldap_search_base = dc=delhivery,dc=com
+id_provider = ldap
+auth_provider = ldap
+ldap_schema = rfc2307bis
+ldap_user_uuid = entryUUID
+ldap_groups_use_matching_rule_in_chain = true
+ldap_initgroups_use_matching_rule_in_chain = true
+enumerate = false
+ldap_tls_cipher_suite = NORMAL:!VERS-TLS1.3
+
+
+
+
